@@ -1,6 +1,7 @@
 Servidor = XAMPP
 
 localhost/pasta/pasta/index.php
-
-Última aula = Operadores de Atribuição #06
-https://www.youtube.com/watch?v=NuBt0B_GeEo&list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k&index=7
+http://localhost/php_estudo/operacoesAtribuicao/index.php?a=1000
+    
+Próxima aula = Operadores Relacionais #07
+https://www.youtube.com/watch?v=YrmPk8zL9Qw&list=PLHz_AreHm4dm4beCCCmW4xwpmLf6EHY9k&index=8
