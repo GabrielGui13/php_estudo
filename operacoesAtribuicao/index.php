@@ -31,6 +31,7 @@
             echo $n1 . " "; //imprime 3
             echo $n2 . "<br>"; //imprime 8
                 
+            
             $l1 = 3;
             $l2 = &$l1; //os dois estão referenciados e ligados atraves do &
             $l2 += 5; //muda o valor de l2, e consequentemente o de l1
