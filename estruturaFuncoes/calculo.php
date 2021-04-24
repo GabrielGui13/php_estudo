@@ -7,6 +7,10 @@
 <body>
     <h1>
         <?php
+            function q() {
+                echo "<br>";
+            }
+
             function soma1 ($n1, $n2) {
                 echo $n1 + $n2 . "<br>";
             }
@@ -37,7 +41,14 @@
             ];
 
             echo $nomes["Gabriel"];
+            q();
+            q();
 
+
+            function div (int $num) : int { //escolhe o tipo do parametro e o do retorno
+                return $num / 2;
+            }
+            echo div(5); //retorna 2 por ser divisão de inteiros
         ?>
     </h1>
 </body>

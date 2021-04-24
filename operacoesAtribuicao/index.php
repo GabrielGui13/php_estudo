@@ -17,7 +17,7 @@
             $soma += $b;
             echo $soma . "<br>";
  
-            $aurl = $_GET['a'];
+            $aurl = $_GET['a'] ?? "NENHUM"; //operador de coalescência
             echo $aurl++ . " " . $aurl . "<br>"; //pos-incremento, usa a variavel antes depois incrementa
             echo ++$aurl . " " . $aurl; //pre-incremento, incrementa antes e usa a variavel depois
 
