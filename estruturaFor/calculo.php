@@ -15,7 +15,7 @@
 
             for ($i = 2; $i < $num; $i++) {
                 if ($num % $i == 0) {
-                    echo "$i-";
+                    echo "$i ";
                     $primo = false;
                     $m++;
                 }
