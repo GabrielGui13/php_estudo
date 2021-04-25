@@ -26,40 +26,45 @@
         $cpfD1 = substr($cpf, 9, -1);
         $cpfD2 = substr($cpf, 10);
 
-        //Validação do primeiro digito
+        //Validação do primeiro digito 
         $aux = 0;
         $soma = 0;
         for ($i = 10; $i >= 2; $i--) {
-            $soma += ($cpfate9[$aux] * $i);
+            $soma += $cpfate9[$aux] * $i;
             $aux++;
         }
         if (($soma * 10) % 11 != $cpfD1) $cpfvalido = false;
+        if (($soma * 10) % 11 == 10) $cpfvalido = true;
 
         //Validação do segundo digito
         $aux = 0;
         $soma = 0;
         for ($i = 11; $i >= 2; $i--) {
-            if ($i == 2) $soma += ($cpfD1 * $i);
+            if ($i == 2) $soma += $cpfD1 * $i;
             else {
-                $soma += ($cpfate9[$aux] * $i);
+                $soma += $cpfate9[$aux] * $i;
                 $aux++;
             }
         }
         if (($soma * 10) % 11 != $cpfD2) $cpfvalido = false;
+        if (($soma * 10) % 11 == 10) $cpfvalido = true;
 
         //Ultima validação
         $soma = 0;
+        $aux = 0;
         for ($i = 0; $i < strlen($cpf); $i++) {
             $soma += $cpf[$i];
         }
-        if ($cpf[0] * 11 == $soma) $cpfvalido = false;
-
+        while ($cpf[$aux] == 0) {
+            $aux++;
+        }
+        if ($cpf[$aux] * 11 == $soma) $cpfvalido = false;
+        
         //Mostrar senha preenchida ou não (not assigned)
         if ($senha != $confirmSenha || $senha == "") $senha = "n/a"; 
 
         //Checar espaços brancos nas outras informações
-        else if ($nome == "" || $endereco == "" || $estado == "" || $data == "" || $genero == "" || $login == "") 
-            $checkValues = false;
+        else if ($nome == "" || $endereco == "" || $estado == "" || $data == "" || $genero == "" || $login == "") $checkValues = false;
         else if ($cinema == "" && $musica == "" && $tech == "") $checkValues = false;
 
         if ($checkValues == false) $display = "none";
