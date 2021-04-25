@@ -20,8 +20,45 @@
         $checkValues = true;
         $display = "inline";
 
-        if ($senha != $confirmSenha || $senha == "") $senha = "n/a";
-        else if ($nome == "" || $cpf == "" || $endereco == "" || $estado == "" || $data == "" || $genero == "" || $login == "") 
+        //Validação de CPF
+        $cpfvalido = true;
+        $cpfate9 = substr($cpf, 0, 9);
+        $cpfD1 = substr($cpf, 9, -1);
+        $cpfD2 = substr($cpf, 10);
+
+        //Validação do primeiro digito
+        $aux = 0;
+        $soma = 0;
+        for ($i = 10; $i >= 2; $i--) {
+            $soma += ($cpfate9[$aux] * $i);
+            $aux++;
+        }
+        if (($soma * 10) % 11 != $cpfD1) $cpfvalido = false;
+
+        //Validação do segundo digito
+        $aux = 0;
+        $soma = 0;
+        for ($i = 11; $i >= 2; $i--) {
+            if ($i == 2) $soma += ($cpfD1 * $i);
+            else {
+                $soma += ($cpfate9[$aux] * $i);
+                $aux++;
+            }
+        }
+        if (($soma * 10) % 11 != $cpfD2) $cpfvalido = false;
+
+        //Ultima validação
+        $soma = 0;
+        for ($i = 0; $i < strlen($cpf); $i++) {
+            $soma += $cpf[$i];
+        }
+        if ($cpf[0] * 11 == $soma) $cpfvalido = false;
+
+        //Mostrar senha preenchida ou não (not assigned)
+        if ($senha != $confirmSenha || $senha == "") $senha = "n/a"; 
+
+        //Checar espaços brancos nas outras informações
+        else if ($nome == "" || $endereco == "" || $estado == "" || $data == "" || $genero == "" || $login == "") 
             $checkValues = false;
         else if ($cinema == "" && $musica == "" && $tech == "") $checkValues = false;
 
@@ -37,7 +74,7 @@
             </tr>
             <tr>
                 <td> CPF: </td>
-                <td> <?php echo $cpf; ?> </td>
+                <td> <?php echo $cpf . ($cpfvalido ? " (Válido)" : " (Não Válido)"); ?> </td>
             </tr>
             <tr>
                 <td> Endereço</td>
