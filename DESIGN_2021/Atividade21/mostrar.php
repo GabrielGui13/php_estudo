@@ -25,6 +25,7 @@
         $cpfate9 = substr($cpf, 0, 9);
         $cpfD1 = substr($cpf, 9, -1);
         $cpfD2 = substr($cpf, 10);
+        //sim
 
         //Validação do primeiro digito 
         $aux = 0;
