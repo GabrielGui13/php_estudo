@@ -11,9 +11,9 @@
         $estado = $_POST['estado'];
         $data = $_POST['data'];
         $genero = $_POST['sexo'];
-        $cinema = isset($_POST['cinema']) ? $_POST['cinema'] : "";
-        $musica = isset($_POST['musica']) ? $_POST['musica'] : "";
-        $tech = isset($_POST['tech']) ? $_POST['tech'] : "";
+        $cinema = $_POST['cinema'] ?? "";
+        $musica = $_POST['musica'] ?? ""; //operador de coalescência
+        $tech = isset($_POST['tech']) ? $_POST['tech'] : ""; //operador ternario normal
         $login = $_POST['login'];
         $senha = $_POST['senha'];
         $confirmSenha = $_POST['senhaCheck'];
