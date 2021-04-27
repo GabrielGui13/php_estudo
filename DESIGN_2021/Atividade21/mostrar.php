@@ -21,12 +21,12 @@
         $display = "inline";
 
         if (strlen($cpf) == 11) {
+
             //Validação de CPF
             $cpfvalido = true;
             $cpfate9 = substr($cpf, 0, 9);
             $cpfD1 = substr($cpf, 9, -1);
             $cpfD2 = substr($cpf, 10);
-            //sim
 
             //Validação do primeiro digito 
             $aux = 0;
@@ -68,7 +68,7 @@
         if ($senha != $confirmSenha || $senha == "") $senha = "n/a"; 
 
         //Checar espaços brancos nas outras informações
-        else if ($nome == "" || $endereco == "" || $estado == "" || $data == "" || $genero == "" || $login == "") $checkValues = false;
+        if ($nome == "" || $endereco == "" || $estado == "" || $data == "" || $genero == "" || $login == "") $checkValues = false;
         else if ($cinema == "" && $musica == "" && $tech == "") $checkValues = false;
 
         if ($checkValues == false) $display = "none";
