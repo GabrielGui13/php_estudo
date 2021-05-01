@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="src/mainstyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="img/logomarca-gabriel-musicas.ico"/>
+    <title>Gabriel Musicas</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="main.html"> <img src="img/logomarca-gabriel-musicas.png" class="grow"> </a>
+        </header>
+        <div class="background">
+            <img src="img/pessoaouvindomusica2.png">
+            <div class="back-color"> 
+                <div class="logomarca">
+                    <img src="img/logomarca-gabriel-musicas.png">
+                    <h1> GMUSIC </h1>
+                </div>
+            </div>
+        </div>
+        <div class="acesso">
+            <h1> O que você deseja fazer? </h1>
+            <div class="botoes">
+                <table>
+                    <tr>
+                        <td>
+                            <form action="bancoDeDados.html" name="criardatabase">
+                                <input type="submit" value="Banco de Dados" class="fade">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="adicionarmusica.html" name="adicionarMusicas">
+                                <input type="submit" value="Adicionar Música" class="fade">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="http://localhost/webdesign-2021/avaliacao04/removerMusica.php" name="removerMusica">
+                                <input type="submit" value="Remover Musica" class="fade">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="http://localhost/webdesign-2021/avaliacao04/editarMusica.php" name="editarMusica">
+                                <input type="submit" value="Editar Musica" class="fade">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="http://localhost/webdesign-2021/avaliacao04/tabelamusicas.php" name="checarTabela">
+                                <input type="submit" value="Checar Playlist" class="fade">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <footer>
+                <span> <strong> © 2021 Gplays </strong> Todos os direitos reservados </span>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
